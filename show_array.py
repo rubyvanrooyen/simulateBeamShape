@@ -47,9 +47,9 @@ def generateMap(mkat, subarray=None, antennalist=[], savegraph=False):
     meridians = numpy.arange(21.41,21.48,.01)
     m.drawmeridians(meridians,labels=[0,0,0,1],fontsize=10)
     m.drawmapboundary(fill_color='white')
-    m.scatter(ref_x,ref_y, 1000, marker='+',color='r', label='Array reference', alpha=0.3)
-    m.scatter(mkat_x,mkat_y,3,marker='o',color='b', label='MeerKAT antennas', alpha=0.3)
-    m.scatter(subarr_x,subarr_y,3, marker='o',color='k', label='%s antennas'%str(subarray))
+    m.scatter(ref_x,ref_y, 1000, marker='+',color='r', label='Array reference')
+    m.scatter(mkat_x,mkat_y,3,marker='o',color='b', label='MeerKAT antennas')
+    # m.scatter(subarr_x,subarr_y,3, marker='o',color='k', label='%s antennas'%str(subarray))
     cntr=0
     for x,y in zip(subarr_x, subarr_y):
         plt.text(x,y,mkat.mkat[cntr], fontsize=6, ha='center', va='baseline', color='k')
