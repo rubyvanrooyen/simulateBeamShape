@@ -11,6 +11,7 @@ clobber: realclean
 	rm -f *.png
 	rm -f *.pdf
 	rm -rf *.ms *.MS
+	rm -rf *_tbl *_p0
 
 # -fin-
 

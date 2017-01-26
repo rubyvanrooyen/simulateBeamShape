@@ -34,7 +34,8 @@ make clobber
 
 echo "Generating simulation files for $subarr"
 # Create an input file for simms
-ENUfile=$(python mkat_simms_setup.py --sub mkatcore --silent)
+ENUfile=$(python mkat_simms_setup.py --sub "$subarr" --silent)
+echo $ENUfile
 # Creating a CASA antenna table
 simms -T MeerKAT -n $subarr".MS" -t ascii -cs enu -l mkat_antennas -dec -30d42m48s -ra 0h0m0s -st 1 -dt 60 $ENUfile
 # Generate a configuration file
@@ -46,7 +47,7 @@ mv $subarr".MS_p0/" $subarr".MS/"
 echo
 echo
 echo "Run CASA to simulate beam"
-echo "casa --log2term"
+echo "casapy --log2term"
 echo "clean(vis='$subarr".MS"',niter=0, imagename='$subarr')"
 echo "imview(raster={'file': '$subarr".psf"', 'colormap': 'Misc. 1: Isophotes', 'scaling': -1}, out='$subarr"_psf.png"')"
 echo
