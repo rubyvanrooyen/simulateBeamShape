@@ -37,6 +37,11 @@ if __name__ == '__main__':
                       action="store_true",
                       default=False,
                       help="Generate detailed map of subarray layout")
+    parser.add_option("--silent",
+                      dest='silent',
+                      action="store_true",
+                      default=False,
+                      help="Do not show any messages on stdout for scripting")
     parser.add_option('-o', "--output",
                       dest='savegraph',
                       action="store_true",
@@ -70,7 +75,8 @@ if __name__ == '__main__':
 
     # Get subarray layout coordinates
     filename = make_simms_array(mkat, opts.subarray)
-    print 'SIMMS output file written to %s' % filename
+    if not opts.silent: print 'SIMMS output file written to %s' % filename
+    else: print filename
 
     if opts.verbose:
         try: plt.show()
