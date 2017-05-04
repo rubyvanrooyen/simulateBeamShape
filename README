@@ -3,7 +3,6 @@ Simulating beamshape and UV-coverage using CASA and a simms generated ANTENNA ta
 Input assumed
 -----
  - MeerKAT subarray layout
- - [Selected antennas]
 
 Requires
 -----
@@ -16,4 +15,8 @@ Usage
 mkat_config.py -- contains MeerKAT array configuration and hardcoded array values
 make_simms_setup.py -- autogen .cfg file used by simms
 make_cfg.py -- generate measurement set to get ANTENNA table for configuration
+
+Subarray layout scripts
+-----
+https://github.com/ska-sa/katsdpresearch/tree/ar2-psf
 

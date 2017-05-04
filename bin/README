@@ -1,0 +1,18 @@
+source venv/bin/activate
+
+http://nixos.org/patchelf.html
+tar -xvif patchelf-0.9.tar.bz2
+cd patchelf-0.9/
+./configure --prefix="/home/ruby/ska_development/simulateBeamShape/venv/local/"
+make install
+ls /home/ruby/ska_development/simulateBeamShape/venv/local/bin/patchelf
+
+
+https://newton.cx/~peter/2014/02/casa-in-python-without-casapy/
+./makeCasacPython.sh
+
+ipython
+from casac import *
+
+
+
